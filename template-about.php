@@ -17,7 +17,7 @@
 								echo esc_attr($radiuzz_cassiopeia_pagetitle_title);
 							}
 							else {
-								echo the_title();
+								echo esc_attr(the_title());
 							}
 						?>
 					</h2>
@@ -33,10 +33,10 @@
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12 about-info">
 						<h3><?php the_title(); ?></h3>
-						<p><?php the_content(); ?></p>
+						<?php the_content(); ?>
 					</div>
 				</div>
-				<div class="about-content">
+				<div class="row about-content">
 				<?php if(have_rows("cassiopeia_about_content")) : while(have_rows("cassiopeia_about_content")) : the_row(); ?>
 					<?php if(get_row_layout() == "cassiopeia_about_content_skills") : ?>
 					<div class="about-progress col-md-6 col-sm-6 col-xs-12">

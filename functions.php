@@ -57,8 +57,8 @@ function radiuzz_cassiopeia_add_external_css() {
 	wp_enqueue_style("font-awesome");
 	wp_enqueue_style("main");
     $protocol = is_ssl() ? 'https' : 'http';
-    wp_enqueue_style("raleway", "$protocol://fonts.googleapis.com/css?family=Raleway:400,500,600,300,300italic");
 	wp_enqueue_style("rokkit", "$protocol://fonts.googleapis.com/css?family=Rokkitt:400,700");
+	wp_enqueue_style("Lora", "$protocol://fonts.googleapis.com/css?family=Lora:400,400italic,700");
 }
 
 	add_action("wp_enqueue_scripts", "radiuzz_cassiopeia_add_external_css");

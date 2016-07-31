@@ -100,12 +100,12 @@
 								<div class="project-content">
 									<div class="text-content">
 										<h2><?php the_title(); ?></h2>
-										<p><?php the_content(); ?></p>
+										<?php the_content(); ?>
 									</div>
 									<div class="details-holder">
 										<div class="details categories">
 											<h4>Categories</h4>
-											<ul><?php the_category(' ') ?></ul>
+										<?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 										</div>
 										<div class="details">
 											<h4>Author</h4>
@@ -161,12 +161,12 @@
 							<div class="project-content">
 								<div class="text-content col-md-8">
 									<h2><?php the_title(); ?></h2>
-									<p><?php the_content(); ?></p>
+									<?php the_content(); ?>
 								</div>
 								<div class="details-holder col-md-offset-1 col-md-3">
 									<div class="details categories">
 										<h4>Categories</h4>
-										<ul><?php the_category(' ') ?></ul>
+										<?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 									</div>
 									<div class="details">
 										<h4>Author</h4>
@@ -231,12 +231,12 @@
 								<div class="project-content">
 									<div class="text-content">
 										<h2><?php the_title(); ?></h2>
-										<p><?php the_content(); ?></p>
+										<?php the_content(); ?>
 									</div>
 									<div class="details-holder">
 										<div class="details categories">
 											<h4>Categories</h4>
-											<ul><?php the_category(' ') ?></ul>
+										<?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 										</div>
 										<div class="details">
 											<h4>Author</h4>
@@ -292,12 +292,12 @@
 							<div class="project-content">
 								<div class="text-content col-md-8">
 									<h2><?php the_title(); ?></h2>
-									<p><?php the_content(); ?></p>
+									<?php the_content(); ?>
 								</div>
 								<div class="details-holder col-md-offset-1 col-md-3">
 									<div class="details categories">
 										<h4>Categories</h4>
-										<ul><?php the_category(' ') ?></ul>
+										<?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 									</div>
 									<div class="details">
 										<h4>Author</h4>

@@ -9,7 +9,8 @@
    7. Portfolio
    8. Contact
    9. Footer
-   10. Responsivity Media Queries
+   10.Basic elements
+   11. Responsivity Media Queries
    ----------------------------------- */
 
 /* --------------------------
@@ -19,7 +20,8 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'raleway', sans-serif;
+	font-family: 'Lora', serif;
+	line-height:23px;
 }
 h1, h2, h3, h4, h5, h6,
 header .logo h3,
@@ -32,6 +34,15 @@ header nav .menu li a,
 .widget_recent_comments ul li
  {
 	font-family: 'rokkitt', sans-serif;
+}
+h1, h2, h3, h4 {
+    font-weight: 700;
+}
+h5 {
+    opacity: 0.6;
+}
+h6 {
+    opacity: 0.4;
 }
 
 img {max-width: 100%;}
@@ -52,11 +63,11 @@ img {max-width: 100%;}
 hr.special {
     background: url(../images/hr.png) no-repeat;
     position: relative;
-    width: 25px;
     height: 8px;
     margin-top: 20px;
     margin-bottom: 15px;
     border: none;
+    background-position: center center;
 }
 .display-none {
 	display: none !important;
@@ -69,8 +80,125 @@ hr.special {
 .index-page {
 	padding-top: 100px;
 }
+/*Buttons*/
+button, input[type=submit], input[type=reset], input[type=button], .button, .pagination .page-numbers, .woocommerce-pagination .page-numbers {
+    display: inline-block;
+    padding: .75em 1.25em;
+    line-height: normal;
+    margin: 0 .5em 1em 0;
+    border: 1px solid #000;
+    font-family: "Poppins",sans-serif;
+    font-size: 1em;
+    font-weight: inherit;
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: none;
+    background-image: -webkit-linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0));
+    background-color: transparent;
+    color: #000;
+    cursor: pointer;
+    outline: 0;
+    border-radius: 1px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out;
+    transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out;
+}
+button.grey, input[type=submit].grey, input[type=reset].grey, input[type=button].grey, .button.grey, .pagination .page-numbers.current, .woocommerce-pagination .page-numbers.current {
+    color: #999;
+    border-color: #999;
+}
+button.red, input[type=submit].red, input[type=reset].red, input[type=button].red, .button.red {
+    color: #0fe2b8;
+    border-color: #0fe2b8;
+}
+button.underline, input[type=submit].underline, input[type=reset].underline, input[type=button].underline, .button.underline, .pagination .page-numbers, .woocommerce-pagination .page-numbers {
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    padding: .3em 0;
+    margin-right: .75em;
+    letter-spacing: .15em;
+    font-size: .85em;
+    border-radius: 0;
+}
 
-
+button.yellow, input[type=submit].yellow, input[type=reset].yellow, input[type=button].yellow, .button.yellow {
+    color: #f0ce4e;
+    border-color: #f0ce4e;
+}
+.button, .button:hover, .button:visited {
+    text-decoration: none;
+}
+button:hover, button:focus, input[type=submit]:hover, input[type=submit]:focus, input[type=reset]:hover, input[type=reset]:focus, input[type=button]:hover, input[type=button]:focus, .button:hover, .button:focus, .pagination .page-numbers:hover, .pagination .page-numbers:focus, .woocommerce-pagination .page-numbers:hover, .woocommerce-pagination .page-numbers:focus {
+    color: rgba(0,0,0,.7);
+    border-color: rgba(0,0,0,.7);
+}
+/*Social buttons*/
+.social-link {
+    display: inline-block;
+    width: 2.5em;
+    height: 2.5em;
+    padding: 0;
+    margin: .1em .2em .35em 0;
+    font-size: 1.2em;
+    line-height: 2.5em;
+    text-align: center;
+}
+/*Tables*/
+table {
+    width: 100%;
+    margin-bottom: 1.5em;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0;
+}
+table th {
+    position: relative;
+    padding: .6em .4em;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: bottom;
+}
+table tbody td {
+    padding: .4em;
+    border-bottom: 1px solid #eee;
+}
+table tbody tr:last-child th, table tbody tr:last-child td {
+    border-bottom: 0;
+}
+table tfoot td {
+    position: relative;
+    padding: .6em .4em;
+    border-top: 1px solid #000;
+}
+/*List items*/
+.fa-ul {
+    padding-left: 1.2em;
+    margin-left: 0;
+}
+.fa-ul>li {
+    position: relative;
+}
+.fa-ul .fa-li {
+    top: 1em;
+    margin-top: -.7em;
+    left: -2.1em;
+    width: 2.1em;
+}
+.fa-li {
+    position: absolute;
+    left: -2.14285714em;
+    width: 2.14285714em;
+    top: .14285714em;
+    text-align: center;
+}
+.fa.fa-colored:before {
+    color: #ff3c1f;
+}
 header .mobile-menu .line,
 header .mobile-menu .line:before,
 header .mobile-menu .line:after,
@@ -110,23 +238,17 @@ footer span a:after,
 	-o-transition: .3s all;
 	transition: .3s all;
 }
-
 /* =WordPress Core
 -------------------------------------------------------------- */
-.sticky {
-}
-
 .sticky:before {
-    width: 10px;
-    content: "";
-    height: 17px;
     position: absolute;
-    right: 20px;
-    top: 0;
-    background: url(../images/sticky.png);
-    z-index: 99;
+    right: 3px;
+    top: -1px;
+    content: "\f02e";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 20px;
+    color: #0fe2b8;
 }
-
 .alignnone {
     margin: 5px 20px 20px 0;
     height: auto;
@@ -134,7 +256,6 @@ footer span a:after,
 
 .aligncenter,
 div.aligncenter {
-    display: block;
     margin: 5px auto 5px auto;
 }
 
@@ -284,7 +405,7 @@ header .mobile-menu .line {
 	display: inline-block;
 	width: 32px;
 	position: relative;
-	background-color: #777;
+	background-color: #3d3d3d;
 }
 
 header .logo a {
@@ -313,7 +434,7 @@ header .mobile-menu .line:before {
 	top: -8px;
 	width: 32px;
 	height: 3px;
-	background-color: #777;
+	background-color: #3d3d3d;
 }
 
 header .mobile-menu.open .line:after {
@@ -330,7 +451,7 @@ header .mobile-menu .line:after {
 	top: 8px;
 	width: 32px;
 	height: 3px;
-	background-color: #777;
+	background-color: #3d3d3d;
 }
 
 header nav {
@@ -408,7 +529,7 @@ header nav .menu li:last-child {
 }
 
 header nav .menu #socials-link a {
-	border-left: 1px solid #777;
+	border-left: 1px solid #3d3d3d;
 	padding-left: 20px;
 	padding-bottom: 0;
 }
@@ -658,14 +779,15 @@ header nav .menu li ul li:last-child a {
 	display: block;
 	text-align: center;
 	margin: 0;
-	color: #777;
+	color: #3d3d3d;
 	text-transform: uppercase;
+	font-weight: 300;
 }
 
 .wrapper .home-photography .page-title span {
 	display: block;
 	text-align: center;
-	color: #777;
+	color: #3d3d3d;
 	font-size: 15px;
 	text-transform: capitalize;
 }
@@ -781,7 +903,7 @@ header nav .menu li ul li:last-child a {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(255, 255, 255, 0.85);
+	background-color: rgba(255, 255, 255, 0.95);
 	opacity: 0;
 }
 
@@ -811,7 +933,7 @@ header nav .menu li ul li:last-child a {
 }
 
 .wrapper .portfolio .item .overlay .overlay-inner span {
-	color: #777;
+	color: #3d3d3d;
 	font-size: 15px;
 	text-transform: capitalize;
 }
@@ -847,12 +969,14 @@ header nav .menu li ul li:last-child a {
 }
 
 .about .about-info p {
-	color: #777;
+	color: #3d3d3d;
 	margin-left: 5px;
 	-webkit-column-count: 2;
 	-moz-column-count: 2;
 	-o-column-count: 2;
 	column-count: 2;
+	font-weight: 500;
+    line-height: 27px;
 }
 
 .about h3 {
@@ -904,7 +1028,7 @@ header nav .menu li ul li:last-child a {
 	width: 45px;
 	height: 45px;
 	line-height: 45px;
-	background-color: #777;
+	background-color: #3d3d3d;
 }
 
 .about .about-content .about-socials ul li:hover {
@@ -958,15 +1082,12 @@ header nav .menu li ul li:last-child a {
 	border: 1px solid #ddd;
 	padding: 0 20px;
 }
-
-.blog .blog-post .post-content h3 {
-	margin: 30px 0px 20px 0;
-	text-align: center;
+.page-template-template-blog .blog .blog-post .post-content h3 {
+    text-align: center;
 }
-
 .blog .blog-masonry .blog-post .post-content h3 {
 	margin: 30px 0px 20px 0;
-	text-align: left;
+	text-align: center;
 }
 
 .blog .blog-post .post-content h3 a {
@@ -991,6 +1112,7 @@ header nav .menu li ul li:last-child a {
 
 .blog .blog-masonry .blog-post .post-content .details {
 	text-align: left;
+	line-height: 26px;
 }
 
 .blog .blog-post .post-content .details .category {
@@ -1058,7 +1180,7 @@ header nav .menu li ul li:last-child a {
     top: 6px;
 }
 .blog .blog-post .post-content p {
-	color: #777;
+	color: #3d3d3d;
 }
 
 .blog .blog-post .post-content .more-button a {
@@ -1090,7 +1212,7 @@ header nav .menu li ul li:last-child a {
 }
 
 .blog .pagination-holder .pagination li a {
-	color: #777;
+	color: #3d3d3d;
 	text-decoration: none;
 	border: none;
 	font-size: 17px;
@@ -1381,31 +1503,31 @@ header nav .menu li ul li:last-child a {
 	padding: 30px 0;
 }
 
-.blog-single .share-side h5 {
+ .share-side h5 {
 	margin: 0;
 	font-size: 15px;
 	line-height: 21px;
 }
 
-.blog-single .share-side ul {
+.share-side ul {
 	margin: 0;
 	padding: 0;
 	margin-left: 4px;
 	margin-top: 15px;
 }
 
-.blog-single .share-side ul li {
+.share-side ul li {
 	display: inline-block;
 	margin-right: 15px;
 }
 
-.blog-single .share-side ul li a {
+.share-side ul li a {
 	color: #0fe2b8;
 	font-size: 16px;
 	position: relative;
 }
 
-.blog-single .share-side ul li a:hover:after {
+.share-side ul li a:hover:after {
 	width: 100%;
 }
 
@@ -1415,7 +1537,7 @@ header nav .menu li ul li:last-child a {
 }
 
 .blog-single .blog-post .post-content .details {
-	text-align: left;
+	text-align: center;
 }
 
 .blog-single .blog-post .post-content p {
@@ -1512,12 +1634,14 @@ header nav .menu li ul li:last-child a {
 
 .blog-single .comments .comment .comment-text {
 	color: #555;
-	border-bottom: 1px solid #ddd;
+	border: 1px dotted #ddd;
 	padding-bottom: 20px;
 	display: inline-block;
 	margin: 0;
 	margin-top: 15px;
 	margin-left: 85px;
+	width: 90%;
+    padding: 20px;
 }
 
 .blog-single .comments .comment .comment-text p {
@@ -1536,8 +1660,8 @@ header nav .menu li ul li:last-child a {
 }
 
 .blog-single .comment-form input {
-	border: none;
-	border-bottom: 1px solid #bbb;
+	
+	border: 1px solid #bbb;
 	width: 100%;
 	padding: 10px 15px;
 	margin-bottom: 30px;
@@ -1546,11 +1670,11 @@ header nav .menu li ul li:last-child a {
 
 .blog-single .comment-form input:focus,
 .blog-single .comment-form textarea:focus {
-	border-bottom: 1px solid #0fe2b8;
+	border-bottom: 2px solid #0fe2b8;
 }
 
 .blog-single .comment-form textarea {
-	border: none;
+	
 	width: 100%;
 	border-bottom: 1px solid #bbb;
 	padding: 10px 15px;
@@ -1587,6 +1711,9 @@ header nav .menu li ul li:last-child a {
 .blog-single :-ms-input-placeholder {  
    color: #0fe2b8;  
 }
+.comment-form .comment-form .form {
+    padding: 0px 15px;
+}
 
 /* -----------
    7. Portfolio
@@ -1602,9 +1729,6 @@ header nav .menu li ul li:last-child a {
 	padding: 50px 0;
 }
 
-.project-single .share-side {
-	display: none;
-}
 
 .project-single .project-content .text-content h2 {
 	margin: 0;
@@ -1621,7 +1745,7 @@ header nav .menu li ul li:last-child a {
 }
 
 .project-single .project-content .text-content p {
-	color: #777;
+	color: #3d3d3d;
 	font-size: 15px;
 }
 
@@ -1643,9 +1767,11 @@ header nav .menu li ul li:last-child a {
 	display: block;
 	text-decoration: none;
 }
-
+.project-single .project-content .categories ul {
+    list-style-type: none;
+}
 .project-single .project-content .details h4 {
-	color: #666;
+	color: #444;
 	margin: 0;
 }
 
@@ -1715,7 +1841,7 @@ header nav .menu li ul li:last-child a {
 	margin: 0;
 	margin-top: 10px;
 	font-size: 15px;
-	color: #777;
+	color: #3d3d3d;
 	text-transform: capitalize;
 }
 
@@ -1726,13 +1852,13 @@ header nav .menu li ul li:last-child a {
 .contact .contact-info span {
 	display: block;
 	font-size: 15px;
-	color: #777;
+	color: #3d3d3d;
 	margin-bottom: 5px;
 }
 
 .contact .contact-info p {
 	font-size: 15px;
-	color: #777;
+	color: #3d3d3d;
 }
 
 .contact .contact-info span.active {
@@ -1800,7 +1926,7 @@ footer span {
 	display: block;
 	text-align: center;
 	font-size: 14px;
-	color: #777;
+	color: #3d3d3d;
 	padding: 40px 0;
 	line-height: 26px;
 	    background: #f5f8fa;
@@ -1808,7 +1934,7 @@ footer span {
 
 footer span a {
 	text-decoration: none !important;
-	color: #777 !important;
+	color: #3d3d3d !important;
 	position: relative;
 }
 
@@ -1827,9 +1953,8 @@ footer span a:after {
 	height: 1px;
 	background: #0fe2b8;
 }
-
 /* ------------------------------
-   10. Responsivity Media Queries
+   11. Responsivity Media Queries
     ------------------------------ */
 
 @media screen and (max-width: 992px){

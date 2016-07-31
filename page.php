@@ -22,6 +22,7 @@
 							}
 						?>
 					</h2>
+					<hr class="special">
 					<span><?php echo esc_attr($radiuzz_cassiopeia_pagetitle_desc); ?></span>
 				</div>
 			</div>

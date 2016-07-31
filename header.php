@@ -43,10 +43,10 @@
 							wp_nav_menu($args);
 						} 
 					?>
-					<div class="menu right-side">
+					<ul class="menu right-side">
 						<li id="search-link"><a href="#"><i class="fa fa-search"></i></a></li>
 						<li id="socials-link"><a href="#"><i class="fa fa-share-alt"></i></a></li>
-					</div>
+					</ul>
 					</nav>
 					<div class="clear"></div>
 				</div>

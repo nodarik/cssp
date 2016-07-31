@@ -122,9 +122,9 @@
 						</div>
 						<?php endwhile; endif; wp_reset_postdata(); endif; ?>
 					</div>
-					<div class="<?php echo esc_attr("$radiuzz_cassiopeia_blog_sidebar"); ?>">
+					<ul class="<?php echo esc_attr("$radiuzz_cassiopeia_blog_sidebar"); ?>">
 						<?php get_sidebar(); ?>
-					</div>
+					</ul>
 				</div>
 				<div class="row">
 					<div class="col-md-12 pagination-holder">

@@ -37,19 +37,16 @@ if ( post_password_required() ) {
 	<?php
 		$fields =  array(
 			'author' =>
-			'<div class="col-md-4">
+			'<div class="col-md-6">
 				<input type="text" id="author" name="author" placeholder="Name">
 			</div>',
 
 			'email' =>
-			'<div class="col-md-4">
+			'<div class="col-md-6">
 				<input type="email" id="email" name="email" placeholder="Email">
-			</div>',
-
-			'phone' =>
-			'<div class="col-md-4">
-				<input type="text" id="phone" name="phone" placeholder="Phone">
 			</div>'
+
+			
 		);
 		$args = array(
 				'fields' => apply_filters( 'comment_form_default_fields', $fields ),
