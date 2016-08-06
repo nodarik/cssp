@@ -56,15 +56,40 @@ function radiuzz_cassiopeia_add_external_css() {
 	wp_enqueue_style("bootstrap");
 	wp_enqueue_style("font-awesome");
 	wp_enqueue_style("main");
-    $protocol = is_ssl() ? 'https' : 'http';
-	wp_enqueue_style("rokkit", "$protocol://fonts.googleapis.com/css?family=Rokkitt:400,700");
-	wp_enqueue_style("Lora", "$protocol://fonts.googleapis.com/css?family=Lora:400,400italic,700");
+ 
 }
 
 	add_action("wp_enqueue_scripts", "radiuzz_cassiopeia_add_external_css");
 	
 	// Include custom css
 	include( get_template_directory() . "/assets/css/custom.php");
+	
+/* ------------------------------------------------------------------------ */
+/* Google Fonts */
+/* ------------------------------------------------------------------------ */
+
+/*
+Register Fonts
+*/
+function radiuzz_cassiopeia_google_fonts() {
+    $font_url = '';
+    
+    /*
+    Translators: If there are characters in your language that are not supported
+    by chosen font(s), translate this to 'off'. Do not translate into your own language.
+     */
+    if ( 'off' !== _x( 'on', 'Google font: on or off', 'cassiopeia' ) ) {
+        $font_url = add_query_arg( 'family', urlencode( 'Lora|Rokkitt:400,400italic,700italic,700&subset=latin,latin-ext' ), "//fonts.googleapis.com/css" );
+    }
+    return $font_url;
+}
+/*
+Enqueue scripts and styles.
+*/
+function radiuzz_cassiopeia_scripts() {
+    wp_enqueue_style( 'cassiopeia-fonts', radiuzz_cassiopeia_google_fonts(), array(), '1.0.0' );
+}
+add_action( 'wp_enqueue_scripts', 'radiuzz_cassiopeia_scripts' );
 
 
 /* ------------------------------------------------------------------------ */
@@ -77,7 +102,6 @@ function radiuzz_cassiopeia_add_external_js() {
 		wp_register_script("isotope", get_template_directory_uri()."/assets/js/isotope.pkgd.js", array("jquery"), "1.0", TRUE);
 		wp_register_script("main", get_template_directory_uri()."/assets/js/main.js", array("jquery"), "1.0", TRUE);
 		// Enqueue
-		wp_enqueue_script("jquery");
 		wp_enqueue_script("bootstrap");
 		wp_enqueue_script("isotope");
 		wp_enqueue_script("main");
@@ -92,10 +116,10 @@ add_action("wp_enqueue_scripts", "radiuzz_cassiopeia_add_external_js");
 /* ------------------------------------------------------------------------ */
 function radiuzz_cassiopeia_widgets_init() {
     register_sidebar( array(
-        'name' => esc_html__( 'Main Sidebar', 'cassiopeia' ),
-        'id' => 'sidebar-1',
-        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'cassiopeia' ),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+    'name' => esc_html__( 'Main Sidebar', 'cassiopeia' ),
+    'id' => 'sidebar-1',
+    'description' => esc_html__( 'Widgets in this area will be shown on all posts and pages.', 'cassiopeia' ),
+    'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</li>',
 	'before_title'  => '<h2 class="widgettitle">',
 	'after_title'   => '</h2>',
@@ -155,12 +179,12 @@ add_action( 'tgmpa_register', 'radiuzz_cassiopeia_theme_plugins' );
 				'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 			),
 	        array(
-	            'name'      => esc_html__('Contact Form 7'),
+	            'name'      => esc_html__('Contact form 7','cassiopeia'),
 	            'slug'      => 'contact-form-7',
 	            'required'  => true,
 	        ),
 			  array(
-	            'name'      => esc_html__('Advanced Custom Fields'),
+	            'name'      => esc_html__('Advanced custom fields','cassiopeia'),
 	            'slug'      => 'advanced-custom-fields',
 	            'required'  => true,
 				'force_activation' 		=> false,

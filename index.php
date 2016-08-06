@@ -24,8 +24,18 @@
 						</div>
 					</div>
 					<?php endwhile; endif; ?>
+					
 				</div>
+				</div>
+				
+					<div class="row">
+					<div class="col-md-12 pagination-holder">
+						<?php the_posts_pagination( array( 'mid_size'  => 2 ) ); ?>
+					</div>
+				</div>
+				
 			</div>
+			
 		</div>
 	</div>
 
