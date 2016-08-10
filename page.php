@@ -33,7 +33,7 @@
 				<div class="row">
 					<div class="col-md-offset-1 col-md-10 col-sm-12 col-xs-12">
 						<div class="col-md-2 share-side">
-							<h5>Share Via:</h5>
+							<h5><?php echo esc_html_e("Share Via:","Cassiopeia")?></h5>
 							<ul>
 								<li><a href="#"><i class="fa fa-behance"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>

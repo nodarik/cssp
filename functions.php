@@ -45,7 +45,7 @@ function radiuzz_cassiopeia_setup() {
 /* ------------------------------------------------------------------------ */
 /* Theme Stylesheets */
 /* ------------------------------------------------------------------------ */
-function radiuzz_cassiopeia_add_external_css() {
+function radiuzz_cassiopeia_enqueue_css() {
 	// Register
 	wp_register_style("wp-style", get_stylesheet_uri(), false, "1.0");
 	wp_register_style("bootstrap", get_template_directory_uri()."/assets/css/bootstrap.css", false, "1.0");
@@ -59,7 +59,7 @@ function radiuzz_cassiopeia_add_external_css() {
  
 }
 
-	add_action("wp_enqueue_scripts", "radiuzz_cassiopeia_add_external_css");
+	add_action("wp_enqueue_scripts", "radiuzz_cassiopeia_enqueue_css");
 	
 	// Include custom css
 	include( get_template_directory() . "/assets/css/custom.php");
@@ -95,7 +95,7 @@ add_action( 'wp_enqueue_scripts', 'radiuzz_cassiopeia_scripts' );
 /* ------------------------------------------------------------------------ */
 /* Loading Theme Scripts */
 /* ------------------------------------------------------------------------ */
-function radiuzz_cassiopeia_add_external_js() {
+function radiuzz_cassiopeia_enqueue_js() {
 	if(!is_admin()) {
 		// Register
 		wp_register_script("bootstrap", get_template_directory_uri()."/assets/js/bootstrap.js", array("jquery"), "1.0", TRUE);
@@ -108,7 +108,7 @@ function radiuzz_cassiopeia_add_external_js() {
 		if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 	}
 }
-add_action("wp_enqueue_scripts", "radiuzz_cassiopeia_add_external_js");
+add_action("wp_enqueue_scripts", "radiuzz_cassiopeia_enqueue_js");
 
 
 /* ------------------------------------------------------------------------ */
@@ -230,8 +230,8 @@ function radiuzz_cassiopeia_pagination($pages = '', $class = '', $range = 4) {
 	 if(1 != $pages)
 	 {
 		 echo "<ul class=\"" . esc_attr($pagination_class)  . "\">";
-		 if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo; ".__("First" , 'cassiopeia')."</a>";
-		 if($paged > 1 && $showitems < $pages) echo "<li><a href='".get_pagenum_link($paged - 1)."'>&lsaquo; ".__("Previous",'cassiopeia')."</a></li>";
+		 if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo; ".esc_html__("First" , 'cassiopeia')."</a>";
+		 if($paged > 1 && $showitems < $pages) echo "<li><a href='".get_pagenum_link($paged - 1)."'>&lsaquo; ".esc_html__("Previous",'cassiopeia')."</a></li>";
 
 		 for ($i=1; $i <= $pages; $i++)
 		 {
@@ -241,8 +241,8 @@ function radiuzz_cassiopeia_pagination($pages = '', $class = '', $range = 4) {
 			 }
 		 }
 
-		 if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged + 1)."\">".__("<i class='fa fa-long-arrow-right'></i>", 'cassiopeia')." &rsaquo;</a>";  
-		 if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li><a href='".get_pagenum_link($pages)."'>".__("<i class='fa fa-long-arrow-left'></i>" , 'cassiopeia')." &raquo;</a></li>";
+		 if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged + 1)."\">".esc_html__("<i class='fa fa-long-arrow-right'></i>", 'cassiopeia')." &rsaquo;</a>";  
+		 if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li><a href='".get_pagenum_link($pages)."'>".esc_html__("<i class='fa fa-long-arrow-left'></i>" , 'cassiopeia')." &raquo;</a></li>";
 		 echo "</ul>\n";
 	 }
 }

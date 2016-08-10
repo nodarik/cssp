@@ -108,11 +108,11 @@
 										<?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 										</div>
 										<div class="details">
-											<h4>Author</h4>
+											<h4><?php echo esc_html_e("Author","Cassiopeia")?></h4>
 											<span><?php the_author(); ?></span>
 										</div>
 										<div class="details">
-											<h4>Date & Time</h4>
+											<h4><?php echo esc_html_e("Date & Time","Cassiopeia")?></h4>
 											<span><?php the_time('F j, Y'); ?></span>
 										</div>
 									</div>
@@ -165,15 +165,15 @@
 								</div>
 								<div class="details-holder col-md-offset-1 col-md-3">
 									<div class="details categories">
-										<h4>Categories</h4>
+										<h4><?php echo esc_html_e("Categories","Cassiopeia")?></h4>
 										<?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 									</div>
 									<div class="details">
-										<h4>Author</h4>
+										<h4><?php echo esc_html_e("Author","Cassiopeia")?></h4>
 										<span><?php the_author(); ?></span>
 									</div>
 									<div class="details">
-										<h4>Date & Time</h4>
+										<h4><?php echo esc_html_e("Date & Time","Cassiopeia")?></h4>
 										<span><?php the_time('F j, Y'); ?></span>
 									</div>
 								</div>
@@ -235,15 +235,15 @@
 									</div>
 									<div class="details-holder">
 										<div class="details categories">
-											<h4>Categories</h4>
+											<h4><?php echo esc_html_e("Categories","Cassiopeia")?></h4>
 										<?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 										</div>
 										<div class="details">
-											<h4>Author</h4>
+											<h4><?php echo esc_html_e("Author","Cassiopeia")?></h4>
 											<span><?php the_author(); ?></span>
 										</div>
 										<div class="details">
-											<h4>Date & Time</h4>
+											<h4><?php echo esc_html_e("Date & Time","Cassiopeia")?></h4>
 											<span><?php the_time('F j, Y'); ?></span>
 										</div>
 									</div>
@@ -296,15 +296,15 @@
 								</div>
 								<div class="details-holder col-md-offset-1 col-md-3">
 									<div class="details categories">
-										<h4>Categories</h4>
+										<h4><?php echo esc_html_e("Categories","Cassiopeia")?></h4>
 										<?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 									</div>
 									<div class="details">
-										<h4>Author</h4>
+										<h4><?php echo esc_html_e("Author","Cassiopeia")?></h4>
 										<span><?php the_author(); ?></span>
 									</div>
 									<div class="details">
-										<h4>Date & Time</h4>
+										<h4><?php echo esc_html_e("Date & Time","Cassiopeia")?></h4>
 										<span><?php the_time('F j, Y'); ?></span>
 									</div>
 								</div>
@@ -375,29 +375,6 @@
 			</div>
 		</div>
 	</div>
-	
-
-
-	<script>
-		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-	</script>
-	<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-	 
-	<script type="text/javascript">
-	  (function() {
-	    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-	    po.src = 'https://apis.google.com/js/platform.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-	  })();
-	</script>
-
 <?php
 	endif; endwhile; endif;
 	get_footer(); 

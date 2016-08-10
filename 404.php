@@ -9,9 +9,9 @@
 			<div class="head-photo"></div>
 			<div class="title-holder">
 				<div class="page-title">
-					<h2>Page not found</h2>
+					<h2><?php echo esc_html_e("Page not found","Cassiopeia")?></h2>
 					<hr class="special">
-					<span>Sorry, but the page you were trying to view does not exist.</span>
+					<span><?php echo esc_html_e("Sorry, but the page you were trying to view does not exist.","Cassiopeia")?></span>
 				</div>
 			</div>
 		</div>

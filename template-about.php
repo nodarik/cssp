@@ -40,7 +40,7 @@
 				<?php if(have_rows("cassiopeia_about_content")) : while(have_rows("cassiopeia_about_content")) : the_row(); ?>
 					<?php if(get_row_layout() == "cassiopeia_about_content_skills") : ?>
 					<div class="about-progress col-md-6 col-sm-6 col-xs-12">
-						<h3>Skills</h3>
+						<h3><?php echo esc_html_e("Skills","Cassiopeia")?></h3>
 						<?php if(have_rows("cassiopeia_about_content_skills_loop")) : while(have_rows("cassiopeia_about_content_skills_loop")) : the_row(); ?>
 						<div class="progress">
 							<div class="progress-bar" role="progressbar" aria-valuenow="<?php echo esc_attr(the_sub_field("cassiopeia_about_content_skills_loop_percentage")); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo esc_attr(the_sub_field("cassiopeia_about_content_skills_loop_percentage")); ?>%;">
@@ -52,7 +52,7 @@
 					</div>
 					<?php elseif(get_row_layout() == "cassiopeia_about_content_socials") : ?>
 					<div class="col-md-6 col-sm-6 col-xs-12 about-socials">
-						<h3>Social</h3>
+						<h3><?php echo esc_html_e("Social","Cassiopeia")?></h3>
 						<ul>
 						<?php if(have_rows("cassiopeia_about_content_socials_loop")) : while(have_rows("cassiopeia_about_content_socials_loop")) : the_row(); ?>
 							<li><a href="<?php echo esc_attr(the_sub_field("cassiopeia_about_content_socials_loop_link")); ?>"><i class="fa <?php echo esc_attr(the_sub_field("cassiopeia_about_content_socials_loop_icon")); ?>"></i></a></li>
@@ -61,7 +61,7 @@
 					</div>
 					<?php elseif(get_row_layout() == "cassiopeia_about_content_clients") : ?>
 						<div class="col-md-12 col-sm-12 col-xs-12 clients">
-							<h3>Clients</h3>
+							<h3><?php echo esc_html_e("Clients","Cassiopeia")?></h3>
 							<?php if(have_rows("cassiopeia_about_content_clients_loop")) : while(have_rows("cassiopeia_about_content_clients_loop")) : the_row(); ?>
 								<div class="col-md-2 col-sm-4 col-xs-6 clients-logo"><img src="<?php echo esc_url(the_sub_field("cassiopeia_about_content_socials_loop_image")); ?>" alt=""></div>
 							<?php endwhile; endif; ?>

@@ -18,7 +18,7 @@ if ( post_password_required() ) {
 			'short_ping' => true,
 			'avatar_size'=> 34,
 			'max_depth'  => 1,
-			'walker'     => new comment_walker
+			'walker'     => new radiuzz_cassiopeia_comment_walker
 		) );
 	?>
 
@@ -27,25 +27,18 @@ if ( post_password_required() ) {
 	<div class="row">
 		<div class="col-md-12">
 			<?php if ( ! comments_open() ) : ?>
-			<h3 style="margin-top:50px;">Comments are closed.</h3>
+			<h3 ><?php echo esc_html_e("Comments are closed","Cassiopeia")?></h3>
 			<?php else: ?>
-			<h3 style="margin-top:50px;">Leave a Reply</h3>
+			<h3 ><?php echo esc_html_e("Leave a Reply","Cassiopeia")?></h3>
 			<?php endif; ?>
 		</div>
 	</div>
 
 	<?php
 		$fields =  array(
-			'author' =>
-			'<div class="col-md-6">
-				<input type="text" id="author" name="author" placeholder="Name">
-			</div>',
+			'author' =>'<div class="col-md-6"><input type="text" id="author" name="author" placeholder="Name"></div>',
 
-			'email' =>
-			'<div class="col-md-6">
-				<input type="email" id="email" name="email" placeholder="Email">
-			</div>'
-
+			'email' =>'<div class="col-md-6"><input type="email" id="email" name="email" placeholder="Email"></div>'
 			
 		);
 		$args = array(

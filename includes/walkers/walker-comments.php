@@ -1,5 +1,5 @@
 <?php
-	class comment_walker extends Walker_Comment {
+	class radiuzz_cassiopeia_comment_walker extends Walker_Comment {
 		var $tree_type = 'comment';
 		var $db_fields = array( 'parent' => 'comment_parent', 'id' => 'comment_ID' );
  

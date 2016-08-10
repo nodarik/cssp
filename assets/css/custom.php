@@ -1,9 +1,7 @@
 <?php
 
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-if ( is_plugin_active( 'plugin-directory/cassiopeia.php' ) ) {
-  //Check if plugin is activated
-  
+if( function_exists( 'acf' ) ) {
+ 
   function radiuzz_cassiopeia_custom_css() {
 	$radiuzz_cassiopeia_main_color = get_field("cassiopeia_main_color","option");
 	$radiuzz_cassiopeia_transition_duration = get_field("cassiopeia_transition_duration","option");
@@ -299,6 +297,8 @@ add_action('wp_head', 'radiuzz_cassiopeia_custom_css');
 
   
 }
+
+
 
 
 ?>
