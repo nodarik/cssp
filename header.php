@@ -16,16 +16,19 @@
 					<div class="logo">
 						<a href="<?php echo esc_url(home_url('/')); ?>">
 						<?php 
+						 if (function_exists('get_field')) {
 							$radiuzz_cassiopeia_logo = get_field("cassiopeia_logo","option");
-
 							if($radiuzz_cassiopeia_logo) : ?>
-						
 							<img src="<?php echo esc_url($radiuzz_cassiopeia_logo); ?>" alt="">
-
 							<?php else : ?>
-
 							<h3><?php echo esc_attr(bloginfo('name')); ?></h3>
-						<?php endif; ?>	
+							<?php endif; ?>	
+							<?php 
+						} 
+						else {
+							?><h3><?php echo esc_attr(bloginfo('name')); ?></h3><?php
+							}?>				
+						
 						</a>
 					</div>
 					<div class="mobile-menu">
@@ -55,13 +58,30 @@
 				</div>
 				<div class="socials-overlay">
 					<div id="close-socials"><i class="fa fa-times"></i></div>
-					<div class="inner-socials">
-						<ul>
-							<?php if(have_rows("cassiopeia_header_icons","option")) : while(have_rows("cassiopeia_header_icons","option")) : the_row(); ?>
-								<li><a target="_BLANK" href="<?php echo esc_url(the_sub_field("cassiopeia_header_icons_link","option")); ?>"><i class="fa <?php echo esc_url(the_sub_field("cassiopeia_header_icons_icon","option")); ?>"></i></a></li>
-							<?php endwhile; endif; ?>
-						</ul>
-					</div>
+					
+						<?php
+						
+						if( function_exists( 'have_rows' ) ) {?>
+						<div class="inner-socials">
+							<ul>
+							
+								<?php if (!function_exists('have_rows')) {
+									return null;
+								}
+								else {
+								 if(have_rows("cassiopeia_header_icons","option")) : while(have_rows("cassiopeia_header_icons","option")) : the_row(); ?>
+									<li><a target="_BLANK" href="<?php echo esc_url(the_sub_field("cassiopeia_header_icons_link","option")); ?>"><i class="fa <?php echo esc_url(the_sub_field("cassiopeia_header_icons_icon","option")); ?>"></i></a></li>
+								<?php endwhile; endif; 
+							}
+							?>
+							</ul>
+							</div>
+						<?php }
+						else {
+							
+						}
+						?>
+					
 				</div>
 			</div>
 		</header>

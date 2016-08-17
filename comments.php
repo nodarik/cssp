@@ -27,9 +27,9 @@ if ( post_password_required() ) {
 	<div class="row">
 		<div class="col-md-12">
 			<?php if ( ! comments_open() ) : ?>
-			<h3 ><?php echo esc_html_e("Comments are closed","Cassiopeia")?></h3>
+			<h3 ><?php echo esc_html_e("Comments are closed","cassiopeia")?></h3>
 			<?php else: ?>
-			<h3 ><?php echo esc_html_e("Leave a Reply","Cassiopeia")?></h3>
+			<h3 ><?php echo esc_html_e("Leave a Reply","cassiopeia")?></h3>
 			<?php endif; ?>
 		</div>
 	</div>

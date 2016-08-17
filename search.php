@@ -36,8 +36,8 @@
 							<div class="head-photo"></div>
 							<div class="title-holder">
 								<div class="page-title">
-									<h2><?php echo esc_html_e("Oops!","Cassiopeia")?></h2>
-									<span><?php echo esc_html_e("Sorry nothing found from these keywords.","Cassiopeia")?></span>
+									<h2><?php echo esc_html_e("Oops!","cassiopeia")?></h2>
+									<span><?php echo esc_html_e("Sorry nothing found from these keywords.","cassiopeia")?></span>
 								</div>
 							</div>
 						</div>

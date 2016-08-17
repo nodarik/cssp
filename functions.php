@@ -1,7 +1,9 @@
 <?php 
 
 // Define global theme variables
-define('cassiopeia_THEME_NAME', 'cassiopeia');
+define( 'THEMEROOT', get_stylesheet_directory_uri() );
+define( 'IMAGES', THEMEROOT . '/images' );
+define('cassiopeia_THEME_NAME', "cassiopeia");
 $posts_per_page = get_option('posts_per_page');
 global $posts_per_page;
 
@@ -10,6 +12,8 @@ global $posts_per_page;
 if (!isset($content_width)) {
 	$content_width = 1170;
 }
+
+
 
 add_action( 'after_setup_theme', 'radiuzz_cassiopeia_setup' );
 function radiuzz_cassiopeia_setup() {
@@ -41,6 +45,7 @@ function radiuzz_cassiopeia_setup() {
 
 
 }
+
 
 /* ------------------------------------------------------------------------ */
 /* Theme Stylesheets */
@@ -78,7 +83,7 @@ function radiuzz_cassiopeia_google_fonts() {
     Translators: If there are characters in your language that are not supported
     by chosen font(s), translate this to 'off'. Do not translate into your own language.
      */
-    if ( 'off' !== _x( 'on', 'Google font: on or off', 'cassiopeia' ) ) {
+    if ( 'off' !== _x( 'on', 'Google font: on or off', "cassiopeia" ) ) {
         $font_url = add_query_arg( 'family', urlencode( 'Lora|Rokkitt:400,400italic,700italic,700&subset=latin,latin-ext' ), "//fonts.googleapis.com/css" );
     }
     return $font_url;
@@ -116,9 +121,9 @@ add_action("wp_enqueue_scripts", "radiuzz_cassiopeia_enqueue_js");
 /* ------------------------------------------------------------------------ */
 function radiuzz_cassiopeia_widgets_init() {
     register_sidebar( array(
-    'name' => esc_html__( 'Main Sidebar', 'cassiopeia' ),
+    'name' => esc_html__( 'Main Sidebar', "cassiopeia" ),
     'id' => 'sidebar-1',
-    'description' => esc_html__( 'Widgets in this area will be shown on all posts and pages.', 'cassiopeia' ),
+    'description' => esc_html__( 'Widgets in this area will be shown on all posts and pages.', "cassiopeia" ),
     'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</li>',
 	'before_title'  => '<h2 class="widgettitle">',
@@ -169,8 +174,8 @@ add_action( 'tgmpa_register', 'radiuzz_cassiopeia_theme_plugins' );
 	function radiuzz_cassiopeia_theme_plugins() {
 		$plugins = array(
 			array(
-				'name'     				=> esc_html__('Cassiopeia core','cassiopeia'), // The plugin name
-				'slug'     				=> 'cassiopeia', // The plugin slug (typically the folder name)
+				'name'     				=> esc_html__('Cassiopeia core',"cassiopeia"), // The plugin name
+				'slug'     				=> "cassiopeia", // The plugin slug (typically the folder name)
 				'source'   				=> 'http://cassiopeia.radiuzz.com/plugins/cassiopeia.zip', // The plugin source
 				'required' 				=> true, // If false, the plugin is only 'recommended' instead of required
 				'version' 				=> '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
@@ -179,12 +184,12 @@ add_action( 'tgmpa_register', 'radiuzz_cassiopeia_theme_plugins' );
 				'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 			),
 	        array(
-	            'name'      => esc_html__('Contact form 7','cassiopeia'),
+	            'name'      => esc_html__('Contact form 7',"cassiopeia"),
 	            'slug'      => 'contact-form-7',
 	            'required'  => true,
 	        ),
 			  array(
-	            'name'      => esc_html__('Advanced custom fields','cassiopeia'),
+	            'name'      => esc_html__('Advanced custom fields',"cassiopeia"),
 	            'slug'      => 'advanced-custom-fields',
 	            'required'  => true,
 				'force_activation' 		=> false,
@@ -192,8 +197,8 @@ add_action( 'tgmpa_register', 'radiuzz_cassiopeia_theme_plugins' );
 	        )
 	    );
 		$config = array(
-	        'id'           => 'cassiopeia',                 // Unique ID for hashing notices for multiple instances of cassiopeia.
-			'domain'       		=> 'cassiopeia',         	// Text domain - likely want to be the same as your theme.
+	        'id'           => "cassiopeia",                 // Unique ID for hashing notices for multiple instances of cassiopeia.
+			'domain'       		=> "cassiopeia",         	// Text domain - likely want to be the same as your theme.
 	        'default_path' => '',                      // Default absolute path to pre-packaged plugins.
 	        'menu'         => 'cassiopeia-install-plugins', // Menu slug.
 	        'has_notices'  => true,                    // Show admin notices or not.
@@ -230,8 +235,8 @@ function radiuzz_cassiopeia_pagination($pages = '', $class = '', $range = 4) {
 	 if(1 != $pages)
 	 {
 		 echo "<ul class=\"" . esc_attr($pagination_class)  . "\">";
-		 if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo; ".esc_html__("First" , 'cassiopeia')."</a>";
-		 if($paged > 1 && $showitems < $pages) echo "<li><a href='".get_pagenum_link($paged - 1)."'>&lsaquo; ".esc_html__("Previous",'cassiopeia')."</a></li>";
+		 if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo; ".esc_html__("First" , "cassiopeia")."</a>";
+		 if($paged > 1 && $showitems < $pages) echo "<li><a href='".get_pagenum_link($paged - 1)."'>&lsaquo; ".esc_html__("Previous","cassiopeia")."</a></li>";
 
 		 for ($i=1; $i <= $pages; $i++)
 		 {
@@ -241,8 +246,8 @@ function radiuzz_cassiopeia_pagination($pages = '', $class = '', $range = 4) {
 			 }
 		 }
 
-		 if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged + 1)."\">".esc_html__("<i class='fa fa-long-arrow-right'></i>", 'cassiopeia')." &rsaquo;</a>";  
-		 if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li><a href='".get_pagenum_link($pages)."'>".esc_html__("<i class='fa fa-long-arrow-left'></i>" , 'cassiopeia')." &raquo;</a></li>";
+		 if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged + 1)."\">".esc_html__("<i class='fa fa-long-arrow-right'></i>", "cassiopeia")." &rsaquo;</a>";  
+		 if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li><a href='".get_pagenum_link($pages)."'>".esc_html__("<i class='fa fa-long-arrow-left'></i>" , "cassiopeia")." &raquo;</a></li>";
 		 echo "</ul>\n";
 	 }
 }

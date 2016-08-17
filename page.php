@@ -1,8 +1,17 @@
 <?php 
 	get_header(); 
-	$radiuzz_cassiopeia_pagetitle_bg = get_field("cassiopeia_pagetitle_background_image");
-	$radiuzz_cassiopeia_pagetitle_title = get_field("cassiopeia_pagetitle_title");
-	$radiuzz_cassiopeia_pagetitle_desc = get_field("cassiopeia_pagetitle_description");
+	if (!function_exists('get_field')) {
+		$radiuzz_cassiopeia_pagetitle_bg =  THEMEROOT . '/assets/images/bg.png';
+		$radiuzz_cassiopeia_pagetitle_title = "";
+		$radiuzz_cassiopeia_pagetitle_desc = "";
+
+	}
+	else {
+							
+		$radiuzz_cassiopeia_pagetitle_bg = get_field("cassiopeia_pagetitle_background_image");
+		$radiuzz_cassiopeia_pagetitle_title = get_field("cassiopeia_pagetitle_title");
+		$radiuzz_cassiopeia_pagetitle_desc = get_field("cassiopeia_pagetitle_description");
+	}
 
 	if(have_posts()) : while(have_posts()) : the_post();
 ?>
@@ -33,7 +42,7 @@
 				<div class="row">
 					<div class="col-md-offset-1 col-md-10 col-sm-12 col-xs-12">
 						<div class="col-md-2 share-side">
-							<h5><?php echo esc_html_e("Share Via:","Cassiopeia")?></h5>
+							<h5><?php echo esc_html_e("Share Via:","cassiopeia")?></h5>
 							<ul>
 								<li><a href="#"><i class="fa fa-behance"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
