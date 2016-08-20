@@ -29,7 +29,7 @@
 			</div>
 			<div class="<?php echo esc_attr(($radiuzz_cassiopeia_pagetitle_bg) ? 'mouse' : 'display-none'); ?>"></div>
 		</div>
-		<div class="blog blog-single" style="padding-top: 50px;">
+		<div class="blog blog-single">
 			<div class="container">
 			
 				<div class="row">

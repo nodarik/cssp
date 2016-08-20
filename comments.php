@@ -9,7 +9,7 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 
-	<h3 style="margin-bottom: 60px;"><?php comments_number("0", "1", "%"); ?> Comments</h4>
+	<h3><?php comments_number("0", "1", "%"); ?> Comments</h4>
 
 	<?php get_template_part("includes/walkers/walker-comments"); ?>
 
@@ -36,14 +36,14 @@ if ( post_password_required() ) {
 
 	<?php
 		$fields =  array(
-			'author' =>'<div class="col-md-6"><input type="text" id="author" name="author" placeholder="Name"></div>',
+			'author' =>'<div class="col-md-6"><input type="text" id="author" name="author" placeholder="'. esc_html__('Name', 'cassiopeia').'"></div>',
 
-			'email' =>'<div class="col-md-6"><input type="email" id="email" name="email" placeholder="Email"></div>'
+			'email' =>'<div class="col-md-6"><input type="email" id="email" name="email" placeholder="'. esc_html__('Email', 'cassiopeia').'"></div>'
 			
 		);
 		$args = array(
 				'fields' => apply_filters( 'comment_form_default_fields', $fields ),
-				'comment_field' => '<div class="col-md-12"><textarea id="comment" name="comment" placeholder="Your message"></textarea></div>',
+				'comment_field' => '<div class="col-md-12"><textarea id="comment" name="comment" placeholder="'. esc_html__('Message', 'cassiopeia').'"></textarea></div>',
 				'comment_notes_before' => '<div class="form row">',
 				'comment_notes_after' => '</div>',
 				'title_reply' => '',

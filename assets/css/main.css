@@ -1071,12 +1071,15 @@ header nav .menu li ul li:last-child a {
   6. Blog + Blog Single
     ------------------- */
 
-.blog {
-	/*padding-top: 50px;*/
+.blog..blog-post {
+	padding-top: 50px;
 }
 
 .blog .blog-post {
 	margin-bottom: 50px;
+}
+.home-photography.no-page-bg{
+	height:100vh;
 }
 
 .blog .blog-masonry .blog-post,
@@ -1603,6 +1606,7 @@ header nav .menu li ul li:last-child a {
 .blog-single .comments h3 {
 	color: #333;
 	margin-top: 50px;
+	margin-bottom: 60px;
 }
 
 .blog-single .comments ul {

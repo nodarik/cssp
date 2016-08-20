@@ -56,7 +56,7 @@
 	        	$radiuzz_cassiopeia_blog_post = "blog-post col-md-6";
 	        }
 		?>
-		<div class="blog" style="padding-top: 50px;">
+		<div class="blog">
 			<div class="container">
 				<div class="<?php echo esc_attr($radiuzz_cassiopeia_blog_masonry); ?>">
 					<div class="<?php echo esc_attr($radiuzz_cassiopeia_blog_content); ?>">

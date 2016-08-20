@@ -1,7 +1,7 @@
 <?php 
 	get_header(); 
 	if (!function_exists('get_field')) {
-		$radiuzz_cassiopeia_pagetitle_bg =  THEMEROOT . '/assets/images/bg.png';
+		$radiuzz_cassiopeia_pagetitle_bg =  RADIUZZ_CASSIOPEIA_THEMEROOT . '/assets/images/bg.png';
 		$radiuzz_cassiopeia_pagetitle_title = "";
 		$radiuzz_cassiopeia_pagetitle_desc = "";
 
@@ -37,7 +37,7 @@
 			</div>
 			<div class="<?php echo esc_attr(($radiuzz_cassiopeia_pagetitle_bg) ? 'mouse' : 'display-none'); ?>"></div>
 		</div>
-		<div class="blog blog-single" style="padding-top: 50px;">
+		<div class="blog blog-single">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-offset-1 col-md-10 col-sm-12 col-xs-12">

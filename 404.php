@@ -5,7 +5,7 @@
 
 
 	<div class="wrapper">
-		<div class="home-photography no-page-bg" style="height:100vh;">
+		<div class="home-photography no-page-bg">
 			<div class="head-photo"></div>
 			<div class="title-holder">
 				<div class="page-title">

@@ -1,9 +1,8 @@
 <?php 
 
 // Define global theme variables
-define( 'THEMEROOT', get_stylesheet_directory_uri() );
-define( 'IMAGES', THEMEROOT . '/images' );
-define('cassiopeia_THEME_NAME', "cassiopeia");
+define( 'RADIUZZ_CASSIOPEIA_THEMEROOT', get_stylesheet_directory_uri() );
+define( 'RADIUZZ_CASSIOPEIA_IMAGES', RADIUZZ_CASSIOPEIA_THEMEROOT . '/images' );
 $posts_per_page = get_option('posts_per_page');
 global $posts_per_page;
 
@@ -22,7 +21,7 @@ function radiuzz_cassiopeia_setup() {
 	add_theme_support("post-thumbnails");
 	add_theme_support("automatic-feed-links");
 	add_theme_support("title-tag");
-	define("ACF_LITE" , true);
+	
 
 
 
